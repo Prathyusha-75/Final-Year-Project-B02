@@ -1,0 +1,9 @@
+# Install PyTorch separately so you can choose the correct build for this machine.
+# The project code requires `torch`; the helper commands below use the standard
+# PyTorch wheel sets for GPU or CPU environments.
+# - NVIDIA GPU on Windows: `powershell -ExecutionPolicy Bypass -File .\install_gpu_torch.ps1`
+# - CPU only: `python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu`
+opencv-python
+numpy
+pillow
+gradio

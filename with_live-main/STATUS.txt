@@ -1,0 +1,49 @@
+Night Vision Seekers - Project Status
+
+Last reviewed: 2026-03-30
+
+Current state
+
+- Documentation updated
+- Gradio app code present
+- Zero-DCE weights file present
+- Training script present
+- Windows GPU install script present
+
+What was checked
+
+- `app.py` exists and defines the Gradio UI
+- `main.py` exists and provides OpenCV webcam preview
+- `train.py` exists and saves weights to `models/zero_dce/weights.pth`
+- `processors/zero_dce.py` loads the model and selects `MPS`, `CUDA`, or `CPU`
+- `models/zero_dce/model.py` uses `number_f = 32`, which matches the shipped weights configuration
+- `requirements.txt` includes the non-PyTorch Python packages used directly by the code
+
+Requirements status
+
+- `opencv-python`: required and listed
+- `numpy`: required and listed
+- `pillow`: required and listed
+- `gradio`: required and listed
+- `torch`: required by the code and intentionally installed separately so the correct CPU or GPU build can be chosen
+
+Documentation status
+
+- `README.md`: setup, installation, usage, training, and troubleshooting
+- `QUICK_SUMMARY.md`: explains how the project works internally
+- `STATUS.txt`: current project snapshot
+
+Important notes
+
+- This repository does not pin exact package versions in `requirements.txt`
+- The current review was a code and documentation consistency check
+- The app was not re-run as part of this status update
+- Performance claims such as exact FPS or memory usage should only be documented after a fresh runtime test on the target machine
+
+Recommended next checks
+
+1. Create or activate `venv`
+2. Install the correct PyTorch build for your machine
+3. Run `pip install -r requirements.txt`
+4. Start the app with `python run_app.py`
+5. Verify image, video, and webcam flows locally
